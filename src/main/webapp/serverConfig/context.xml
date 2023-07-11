@@ -26,12 +26,14 @@
     <!--
     <Manager pathname="" />
     -->
-    <Resource name="jdbc/world"
-              auth="Container"
-              type="javax.sql.DataSource"
+    <!-- 
               minIdle="10"
               maxActive="50"
               maxWait="10000"
+    -->
+    <Resource name="jdbc/world"
+              auth="Container"
+              type="javax.sql.DataSource"
               username="ysuser"
               password="yspass"
               driverClassName="com.mysql.cj.jdbc.Driver"
@@ -39,9 +41,6 @@
 	<Resource name="jdbc/project"
               auth="Container"
               type="javax.sql.DataSource"
-              minIdle="10"
-              maxActive="50"
-              maxWait="10000"
               username="ysuser"
               password="yspass"
               driverClassName="com.mysql.cj.jdbc.Driver"
