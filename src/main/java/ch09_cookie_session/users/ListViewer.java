@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class UserList
  */
 @WebServlet("/ch09/users/listView")
-public class UserListViewer extends HttpServlet {
+public class ListViewer extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
@@ -40,7 +40,7 @@ public class UserListViewer extends HttpServlet {
 		// 로그인되었으면 -> 로그아웃 버튼, 환영 메세지
 		// 로그인이 안되었으면 -> 로그인 버튼
 		if (sessionUid != null) {				// 로그인 상태
-			html += "<button onclick=\"location.href='/jw/ch09/users/logout'\">로그아웃</button>";
+			html += "<button onclick=\"location.href='/jw/ch09/users/logout'\">로그아웃</button>&nbsp;&nbsp;";
 			html += session.getAttribute("uname") + "님 환영합니다.";
 		} else {								// 비로그인 상태
 			html += "<button onclick=\"location.href='/jw/ch09/users/login.html'\">로그인</button>";

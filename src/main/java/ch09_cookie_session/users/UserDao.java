@@ -96,6 +96,21 @@ public class UserDao {
 		}
 	}
 	
+	public void updateUserWithoutPassword(User u) {
+		Connection conn = getConnection();
+		String sql = "update users set uname=?, email=? where uid=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, u.getUname());
+			pstmt.setString(2, u.getEmail());
+			pstmt.setString(3, u.getUid());
+			pstmt.executeUpdate();
+			pstmt.close(); conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void deleteUser(String uid) {
 		Connection conn = getConnection();
 		String sql = "update users set isDeleted=1 where uid=?";

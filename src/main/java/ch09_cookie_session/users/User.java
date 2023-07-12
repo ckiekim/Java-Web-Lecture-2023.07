@@ -11,6 +11,11 @@ public class User {
 	private int isDeleted;
 	
 	public User() { }
+	public User(String uid, String uname, String email) {
+		this.uid = uid;
+		this.uname = uname;
+		this.email = email;
+	}
 	public User(String uid, String password, String uname, String email) {
 		this.uid = uid;
 		this.password = password;
